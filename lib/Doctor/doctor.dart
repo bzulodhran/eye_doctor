@@ -15,7 +15,7 @@ class _doctorState extends State<doctor> {
     return Scaffold(
         appBar: new AppBar(
           title: Text("Doctor Of Optometry"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
         body: ListView(
           children: [

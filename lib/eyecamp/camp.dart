@@ -26,7 +26,7 @@ class _eye_campState extends State<eye_camp> {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Colors.redAccent,
       title: Text('Free Eye Camp Details'),
       centerTitle: true,
     ),

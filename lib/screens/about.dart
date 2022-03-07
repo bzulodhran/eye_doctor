@@ -1,25 +1,37 @@
+import 'dart:io';
+import 'package:eye_doctor/screens/bottom_curv_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
-class consultation extends StatefulWidget {
-  const consultation({Key? key}) : super(key: key);
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+class about extends StatefulWidget {
+  const about({Key? key}) : super(key: key);
 
   @override
-  _consultationState createState() => _consultationState();
+  _aboutState createState() => _aboutState();
 }
 
-class _consultationState extends State<consultation> {
+class _aboutState extends State<about> {
   @override
-  Widget build(BuildContext context)
-
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: Text("Consultation"),
+          actions: <Widget>[
+            ],
+          title: Text("About Us"),
           backgroundColor: Colors.redAccent,
+            automaticallyImplyLeading: true,
+            //`true` if you want Flutter to automatically add Back Button when needed,
+            //or `false` if you want to force your own back button every where
+            leading: IconButton(icon:Icon(Icons.arrow_back),
+              onPressed:() =>Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BottomNavBar()),),
+              //onPressed:() => exit(0),
+            )
         ),
         body: Column(
 
@@ -29,46 +41,43 @@ class _consultationState extends State<consultation> {
               child: Center(
                 child: Column(
                   children: [
-                    Text("Eye Specialist",
+                    Text("Our Team",
                         style: GoogleFonts.fredokaOne(
                             fontSize: 20, color: Colors.black)),
 
-                    Text("Doctor Of Optometry",
+                    Text("Developer & Designer",
                         style: GoogleFonts.fredokaOne(
                             fontSize: 24, color: Colors.indigo[900],fontWeight: FontWeight.bold)),
-                    Text("Dr. Malik Sikander Khakhil",
+                    Text("Muhammad Asad Abbas",
                         style: GoogleFonts.fredokaOne(
                             fontSize: 24, color: Colors.red)),
 
-                    Text("Eye Hospital DG Khan",
+                    Text("BZU SUB CAMPUSE LODHARAN",
                         style: GoogleFonts.fredokaOne(
                             fontSize: 15, color: Colors.black)),
                     SizedBox(
                       height: 10,
                     ),
-                    Image.asset(
-                      "image/doc.jpg",
-                      height: 250.0,
-                      width: 250.0,
+                    CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 150.0,
+                      child: ClipRRect(
+                        child: Image.asset('image/a.jpeg'),
+                        borderRadius: BorderRadius.circular(180.0),
+                      ),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
-                        Text("Our mission is to provide quality health services to all in a comfortable and cozy environment."
-                            " Waiting area and consultation rooms are fully air conditioned and are backed-up by a high capacity generator."
-                            " There is easy excess and ample parking area.",
+                    Text("I'm Asad Abbas Student of bzu sub campus lodhran"
+                        " ,working as a app developer from last sixth month."
+                        "iF you have any query regarding this so feel free to contact with us",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.fredokaOne(
-                            fontSize: 12, color: Colors.black)),
+                            fontSize: 14, color: Colors.black)),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
-                    /*Text("I wish you best of luck for your admission plans!",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 16, color: Colors.redAccent)
-                      ),*/
-
                   ],
                 ),
               ),
@@ -110,7 +119,7 @@ class _consultationState extends State<consultation> {
                       margin: EdgeInsets.all(8.0),
                       child: RaisedButton(
                         onPressed: () async {
-                          FlutterPhoneDirectCaller.callNumber("+923006567962");
+                          FlutterPhoneDirectCaller.callNumber("+923487111297");
                         },
                         splashColor: Colors.blue,
                         child: Center(
@@ -135,7 +144,7 @@ class _consultationState extends State<consultation> {
                         margin: EdgeInsets.all(8.0),
                         child: RaisedButton(
                           onPressed: () {
-                            openwhatsapp();
+                            launchWhatsApp();
 //whatsAppOpen();
 //FlutterOpenWhatsapp.sendSingleMessage("923047427068", " ");
                           },
@@ -165,19 +174,16 @@ class _consultationState extends State<consultation> {
         )
     );
   }
-  openwhatsapp() async{
-    var whatsapp ="+923006567962";
-    var whatsappURl_android = "whatsapp://send?phone="+whatsapp+"&text=Hello Respected Dr.!!!";
-    ///var whatappURL_ios ="https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
-    if( await canLaunch(whatsappURl_android)){
-      await launch(whatsappURl_android);
-    }else{
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: new Text("whatsapp no installed")));
-    }
 
-
+  launchWhatsApp() async {
+    final link = WhatsAppUnilink(
+      phoneNumber: '+923487111297',
+      text: "Hey! I'm From Bzu Lodhran Campus",
+    );
+    // Convert the WhatsAppUnilink instance to a string.
+    // Use either Dart's string interpolation or the toString() method.
+    // The "launch" method is part of "url_launcher".
+    await launch('$link');
   }
-
 
 }

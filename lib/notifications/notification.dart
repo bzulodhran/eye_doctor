@@ -48,7 +48,7 @@ class _notificationState extends State<notification> {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Colors.redAccent,
       title: Text('Notifications'),
       centerTitle: true,
     ),

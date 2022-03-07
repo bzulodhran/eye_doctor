@@ -16,7 +16,7 @@ class _msState extends State<ms> {
     return Scaffold(
         appBar: new AppBar(
           title: Text("Medical Store"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
 
         body: ListView(
@@ -51,7 +51,12 @@ class _msState extends State<ms> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("Assalam o Alaikum, Optometry is a diverse and engaging health care profession, which encompasses not only the detection of refractive errors, but also detection and management of eye diseases, fitting and prescription of contact lens, care of patients with low vision, offering advice on problems with color vision, it is a very vast field that goes side by side with all other medical sciences.",
+                    Text("We have facility of Pharmacy in our hospital and "
+                        " Provide all prescription medicines."
+                        "We deliver high quality products and services. "
+                        "All types of medicines forpatient health are available at all time. "
+                        "We are careful about our customersand patients because it is only related to their health "
+                        "and we take no anyrisk to customer health and their life.",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.fredokaOne(
                             fontSize: 12, color: Colors.black)),

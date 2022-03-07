@@ -15,7 +15,7 @@ class _optState extends State<opt> {
     return Scaffold(
         appBar: new AppBar(
           title: Text("Operation Theather"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
 
         body: ListView(
@@ -50,7 +50,16 @@ class _optState extends State<opt> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("Assalam o Alaikum, Optometry is a diverse and engaging health care profession, which encompasses not only the detection of refractive errors, but also detection and management of eye diseases, fitting and prescription of contact lens, care of patients with low vision, offering advice on problems with color vision, it is a very vast field that goes side by side with all other medical sciences.",
+                    Text("There is a great facility of OT(Operation Theator ) in our hospital. "
+                        "Operating rooms are spacious, clean and well-lit, "
+                        "typically with overhead Surgical Lights and "
+                        " also viewing screens and monitors.OT have controlled temperature and humidity."
+                        " Rooms are supplied with wall suction, oxygen, and possibly other anesthetic gases."
+                        " Key equipment consists of the Operating Table and the Anesthesia cart and there are tables to set up instruments."
+                        " There is storage space for common surgical supplies. "
+                        "There are containers for disposables. "
+                        "Outside the operating room is a dedicated scrubbing area that is used by surgeons, anesthetists, ODPs (operating department practitioners), "
+                        "and nurses prior to surgery.",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.fredokaOne(
                             fontSize: 12, color: Colors.black)),

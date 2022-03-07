@@ -18,20 +18,8 @@ class _oppState extends State<opp> {
   {
     return Scaffold(
         appBar: new AppBar(
-          /*actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.contact_phone),
-              iconSize: 30,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => contact()),
-                );
-              },
-            ),
-          ],*/
           title: Text("Contact Us"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
         body: Column(
 
@@ -109,7 +97,7 @@ class _oppState extends State<opp> {
                                 width: 50,
                                 fit: BoxFit.fitWidth,),
                               //Icon(Icons.notifications_active_outlined,size: 70.0,color: Colors.green,),
-                              Text("Location", style: new TextStyle(color: Colors.yellowAccent,fontSize: 14.0,fontWeight: FontWeight.bold,),)
+                              Text("Location", style: new TextStyle(color: Colors.black,fontSize: 14.0,fontWeight: FontWeight.bold,),)
                             ],
                           ),
                         ),
@@ -133,7 +121,7 @@ class _oppState extends State<opp> {
                                 width: 50,
                                 fit: BoxFit.fitWidth,),
 //Icon(Icons.notifications_active_outlined,size: 70.0,color: Colors.green,),
-                              Text("Call Us", style: new TextStyle(color: Colors.yellowAccent,fontSize: 14.0,fontWeight: FontWeight.bold,),)
+                              Text("Contact Us", style: new TextStyle(color: Colors.black,fontSize: 14.0,fontWeight: FontWeight.bold,),)
                             ],
                           ),
                         ),
@@ -160,7 +148,7 @@ class _oppState extends State<opp> {
                                   width: 50,
                                   fit: BoxFit.fitWidth,),
 //Icon(Icons.notifications_active_outlined,size: 70.0,color: Colors.green,),
-                                Text("Whatsapp Us", style: new TextStyle(color: Colors.yellowAccent,fontSize: 12.0,fontWeight: FontWeight.bold,),)
+                                Text("Whatsapp Us", style: new TextStyle(color: Colors.black,fontSize: 12.0,fontWeight: FontWeight.bold,),)
                               ],
                             ),
                           ),

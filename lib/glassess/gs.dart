@@ -15,7 +15,7 @@ class _gsState extends State<gs> {
     return Scaffold(
         appBar: new AppBar(
           title: Text("Glasses Store"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
 
         body: ListView(
@@ -50,7 +50,13 @@ class _gsState extends State<gs> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("Assalam o Alaikum, Optometry is a diverse and engaging health care profession, which encompasses not only the detection of refractive errors, but also detection and management of eye diseases, fitting and prescription of contact lens, care of patients with low vision, offering advice on problems with color vision, it is a very vast field that goes side by side with all other medical sciences.",
+                    Text("We are committed to excellence by providing outstanding patient service and quality products."
+                       " We pride ourselves on our attention to personal needs,"
+                        " the quality of our work, and the knowledge and experience of our staff. "
+                        "Patient satisfaction demands the services of well-trained, educated and licensed opticians"
+                        " who can help you obtain the best possible vision. "
+                        "Our Optical Shop prides itself on understanding and meeting your every need by delivering the highest quality service,"
+                       " with the goal of maintaining a long-lasting relationship with you.",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.fredokaOne(
                             fontSize: 12, color: Colors.black)),

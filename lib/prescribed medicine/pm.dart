@@ -16,7 +16,7 @@ class _pmState extends State<pm> {
     return Scaffold(
         appBar: new AppBar(
           title: Text("Emergancy Medicine"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
         body: ListView(
           children: [

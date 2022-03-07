@@ -16,7 +16,7 @@ class _labState extends State<lab> {
     return Scaffold(
         appBar: new AppBar(
           title: Text("Diagnostic"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.redAccent,
         ),
 
         body: ListView(
@@ -39,127 +39,31 @@ class _labState extends State<lab> {
                     ),
                     Image.asset(
                       "image/lab.jpg",
-                      height: 300.0,
-                      width: 300.0,
-                    ),
-                    SizedBox(
-                      height: 10,
+                      height: 250.0,
+                      width: 250.0,
                     ),
                     Text(" Ophthalmology Diagnostic  Tests:",
-                        textAlign: TextAlign.left,
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.fredokaOne(
                             fontSize: 25, color: Colors.green)
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("• Color Vision Test ",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" • Computerized Optic Disc Imaging and Nerve Fiber Layer Analysis (GDX, HRT, OCT)",
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" • Corneal Topography",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" • Electro-Diagnostic Testing",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" • Fluorescein Angiography",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" • Ocular Coherence Tomography (OCT)",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("• Photography  of  the  Eye  ( including  retinal  photography  and  fundus  photography )",
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" • Specular Microscopy",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" •  Visual  Field  Tests  ( Goldmann,  Humphrey,  FDT,  Octopus )",
 
-                          style: GoogleFonts.fredokaOne(
-                              fontSize:18 , color: Colors.redAccent)
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(" •   Ultrasound   of  the  Eye  (  Biometry/IOL   calculation,   A-Scan,   B-Scan  )  ",
-                          style: GoogleFonts.fredokaOne(
-                              fontSize: 18, color: Colors.redAccent)
-                      ),
-                    ),
+
+                    UnorderedList([
+                      "Color Vision Test",
+                      "Computerized Optic Disc Imaging and Nerve Fiber Layer Analysis (GDX, HRT, OCT)"
+                      "Corneal Topography",
+                      "Electro-Diagnostic Testing"
+                          "Fluorescein Angiography",
+                      "Ocular Coherence Tomography (OCT)"
+                          "Photography  of  the  Eye  ( including  retinal  photography  and  fundus  photography )",
+                      "Specular Microscopy"
+                          "Visual  Field  Tests  ( Goldmann,  Humphrey,  FDT,  Octopus )",
+                      "Ultrasound   of  the  Eye  (  Biometry/IOL   calculation,   A-Scan,   B-Scan  )"
+                    ]),
                   ],
                 ),
               ),
@@ -167,6 +71,42 @@ class _labState extends State<lab> {
           ],
         )
 
+    );
+  }
+}
+
+class UnorderedList extends StatelessWidget {
+  UnorderedList(this.texts);
+  final List<String> texts;
+
+  @override
+  Widget build(BuildContext context) {
+    var widgetList = <Widget>[];
+    for (var text in texts) {
+      // Add list item
+      widgetList.add(UnorderedListItem(text));
+      // Add space between items
+      widgetList.add(SizedBox(height: 5.0));
+    }
+
+    return Column(children: widgetList);
+  }
+}
+
+class UnorderedListItem extends StatelessWidget {
+  UnorderedListItem(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("• ", style: GoogleFonts.fredokaOne(fontSize: 18, color: Colors.redAccent)),
+        Expanded(
+          child: Text(text, style: GoogleFonts.fredokaOne(fontSize: 15, color: Colors.black)),
+        ),
+      ],
     );
   }
 }
