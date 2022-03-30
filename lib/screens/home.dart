@@ -234,7 +234,7 @@ class _MyAppState extends State<MyApp> {
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => opp()),
+                    MaterialPageRoute(builder: (context) => ContactPage()),
                   );
                 },
                 splashColor: Colors.blue,
@@ -247,7 +247,7 @@ class _MyAppState extends State<MyApp> {
                         width: 100,
                         fit: BoxFit.fitWidth,),
                       //Icon(Icons.phonelink_outlined,size: 70.0,color: Colors.green,),
-                      Text("Oppointment", style: new TextStyle(color: Colors.black,fontSize: 14.0,fontWeight: FontWeight.bold,),)
+                      Text("Appointment", style: new TextStyle(color: Colors.black,fontSize: 14.0,fontWeight: FontWeight.bold,),)
                     ],
                   ),
                 ),

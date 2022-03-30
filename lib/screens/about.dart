@@ -41,10 +41,6 @@ class _aboutState extends State<about> {
               child: Center(
                 child: Column(
                   children: [
-                    Text("Our Team",
-                        style: GoogleFonts.fredokaOne(
-                            fontSize: 20, color: Colors.black)),
-
                     Text("Developer & Designer",
                         style: GoogleFonts.fredokaOne(
                             fontSize: 24, color: Colors.indigo[900],fontWeight: FontWeight.bold)),

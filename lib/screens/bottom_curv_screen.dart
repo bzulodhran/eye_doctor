@@ -31,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
         backgroundColor: Colors.redAccent,
-        animationCurve: Curves.easeInOut,
+        animationCurve: Curves.bounceInOut,
         animationDuration: Duration(milliseconds: 600),
         //onTap: (index) => setState(() => _currentIndex = index),
         onTap: (index) {
